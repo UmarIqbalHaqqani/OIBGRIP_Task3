@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+          <meta charset="UTF-8">
+          <meta http-equiv="X-UA-Compatible" content="IE=edge">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Temperature Converter</title>
+          <script src="https://kit.fontawesome.com/4ee28de0f0.js" crossorigin="anonymous"></script>
+          <link rel="stylesheet" href="style.css">
+</head>
+<body>
+          <div class="temp_container">
+                    <div class="header">
+                              <span class="heading">Temperature Converter</span>
+                              <span class="icon"><i class="fas fa-temperature-high"></i></span>
+                    </div><br>
+
+                    <div class="text_symbol">
+                              <span>&#8451 &#8457</span>
+                              <span class="temp_icon"><i class="fas fa-cloud-sun-rain"></i></span>
+                    </div>
+                    <div class="input_temperature">
+                              <div class="celsius">
+                                        <span class="text_celsius">Celsius &#8451</span>
+                                        <input type="number" value="" id="celsius">
+                              </div>
+                              <div class="fahrenheit">
+                                        <span class="text_fahrenheit">Fahrenheit &#8457</span>
+                                        <input type="number" value="" id="fahrenheit">
+                              </div>
+                    </div>
+
+          </div>
+</body>
+<script>
+          
+           var celsius = document.getElementById('celsius');
+           var fahrenheit = document.getElementById('fahrenheit');
+
+           celsius.oninput = () => 
+           {
+                    let output = (parseFloat(celsius.value) * 9) / 5 + 32;
+                    fahrenheit.value = parseFloat(output.toFixed(2));
+           };
+           fahrenheit.oninput = () => 
+           {
+                    let output =((parseFloat(fahrenheit.value) -32)* 5)/ 9;
+                    celsius.value = parseFloat(output.toFixed(2));
+           };
+</script>
+</html>
